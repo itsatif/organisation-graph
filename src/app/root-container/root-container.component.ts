@@ -7,6 +7,8 @@ import { Observable, tap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { DetailCardComponent } from '../detail-card/detail-card.component';
 import { MatToolbar } from '@angular/material/toolbar';
+import { MatButton } from '@angular/material/button';
+import { AuthService } from '../shared-services/auth.service';
 
 interface companyList {
   total_companies: number;
@@ -23,6 +25,7 @@ interface companyList {
     TreeGraphComponentComponent,
     DetailCardComponent,
     MatToolbar,
+    MatButton,
   ],
   templateUrl: './root-container.component.html',
   styleUrl: './root-container.component.css',
@@ -32,7 +35,10 @@ export class RootContainerComponent implements OnInit {
   organisationData: any = [];
   renderCardDetail$: Observable<any> = new Observable<any>();
 
-  constructor(@Inject(ApiService) private apiService: ApiService) {
+  constructor(
+    @Inject(ApiService) private apiService: ApiService,
+    @Inject(AuthService) private authService: AuthService,
+  ) {
     this.companies$ = this.apiService.fetchCompanies();
     this.renderCardDetail$ = this.apiService.renderDetailCard$.pipe(
       tap(console.log),
@@ -55,5 +61,9 @@ export class RootContainerComponent implements OnInit {
     if (flag) {
       this.apiService.renderDetailCard$.next(null);
     }
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

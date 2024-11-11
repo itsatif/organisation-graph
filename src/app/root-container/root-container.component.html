@@ -4,6 +4,12 @@
       (selectionChange)="handleCompanySelection($event)"
       [options]="(companies$ | async)?.companies || []"
     ></app-custom-dropdown>
+    <button (click)="logout()" mat-raised-button style="    position: absolute;
+    right: 10px;
+    background: none;
+    color: #fff;
+font-family: Helvetica, Arial, sans-serif;box-shadow: none">Logout
+    </button>
   </mat-toolbar>
   <mat-card style="width: 100%;padding: 20px;height: 90dvh;overflow: auto">
     <div class="content-container">
