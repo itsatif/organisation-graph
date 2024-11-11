@@ -1,0 +1,25 @@
+<mat-form-field appearance="outline" class="custom-dropdown-form-container"
+                style="width: 100%;height: 40px;padding: 0;margin-top: 10px">
+  <mat-label style="color: #fff">Select Company</mat-label>
+  <mat-select (selectionChange)="onSelectionChange()"
+              [formControl]="dropdownControl"
+              panelClass="custom-dropdown-select-panel">
+    <mat-option (click)="$event.preventDefault();$event.stopPropagation()" class="custom-dropdown-select-panel-option"
+                style="min-height: 20px;">
+      <mat-icon style="color: #000;margin-left: 5px;font-size: 18px;height: 18px;margin-right: 0;">search</mat-icon>
+      <input
+        (click)="$event.preventDefault();$event.stopPropagation()"
+        (keydown)="$event.stopPropagation()"
+        (keyup)="filterOptions(searchControl.value)"
+        [formControl]="searchControl"
+        autofocus
+        matInput
+        placeholder="Search Company"
+      />
+    </mat-option>
+    <mat-option *ngFor="let option of filteredOptions" [value]="option"
+                style="font-family: Helvetica, Arial, sans-serif;">
+      {{ option }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

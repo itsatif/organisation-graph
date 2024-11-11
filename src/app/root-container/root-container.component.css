@@ -1,0 +1,20 @@
+.content-container {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-container {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  width: 20%;
+  max-width: 320px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08), 0 7px 7px 0 rgba(0, 0, 0, .07), 0px 17px 10px 0px rgba(0, 0, 0, .04), 0px 30px 12px 0px rgba(0, 0, 0, .01);
+}
+
+.graph-container {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  width: calc(100% - 300px);
+  min-height: 85dvh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

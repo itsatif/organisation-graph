@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #f6f6f6;
+  font-weight: 400;
+  height: 100%;
+  width: 100%;
+}
+
+.mdc-floating-label {
+  font-family: Helvetica, Arial, sans-serif !important;
+}

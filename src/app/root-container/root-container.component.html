@@ -1,0 +1,21 @@
+<div style="display: grid;height: 100dvh;width: 100%;">
+  <mat-toolbar color="primary" style="background: #46465c;justify-content: center">
+    <app-custom-dropdown
+      (selectionChange)="handleCompanySelection($event)"
+      [options]="(companies$ | async)?.companies || []"
+    ></app-custom-dropdown>
+  </mat-toolbar>
+  <mat-card style="width: 100%;padding: 20px;height: 90dvh;overflow: auto">
+    <div class="content-container">
+      <ng-container *ngIf="(renderCardDetail$ | async) as renderCardDetail;else emptyDiv">
+        <app-detail-card (hideCard)="hideDetailCard($event)" [data]="renderCardDetail"></app-detail-card>
+      </ng-container>
+      <ng-template #emptyDiv>
+        <div class="detail-container"></div>
+      </ng-template>
+      <div class="graph-container">
+        <app-tree-graph-component [graphData]="organisationData"></app-tree-graph-component>
+      </div>
+    </div>
+  </mat-card>
+</div>

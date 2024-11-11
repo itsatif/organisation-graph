@@ -1,0 +1,96 @@
+.profile-card {
+  width: 100%;
+  min-width: 280px;
+  max-width: 320px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.profile-header {
+  /*background-color: #2f2f2f;*/
+  text-align: center;
+  background: #46465c;
+}
+
+.profile-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 400 !important;
+}
+
+.profile-header .title {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.profile-details {
+  padding: 10px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 400;
+  color: #687166;
+  margin-right: 5px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.detail-value {
+  color: #333;
+  font-weight: 400;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.close-button {
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1 !important;
+  transition: background-color 0.2s ease;
+  box-sizing: border-box;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.close-button:hover {
+  background-color: #d0d0d0;
+}
+
+.close-button mat-icon {
+  line-height: 1 !important;
+  font-size: 20px !important;
+  padding: 0 !important;
+  height: max-content !important;
+  width: max-content !important;
+}
+
+
+a {
+  text-decoration: none;
+}
