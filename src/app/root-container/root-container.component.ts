@@ -9,6 +9,7 @@ import { DetailCardComponent } from '../detail-card/detail-card.component';
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatButton } from '@angular/material/button';
 import { AuthService } from '../shared-services/auth.service';
+import { OrgMetricCardComponent } from '../org-metric-card/org-metric-card.component';
 
 interface companyList {
   total_companies: number;
@@ -26,6 +27,7 @@ interface companyList {
     DetailCardComponent,
     MatToolbar,
     MatButton,
+    OrgMetricCardComponent,
   ],
   templateUrl: './root-container.component.html',
   styleUrl: './root-container.component.css',
@@ -34,6 +36,7 @@ export class RootContainerComponent implements OnInit {
   companies$: Observable<companyList> = null;
   organisationData: any = [];
   renderCardDetail$: Observable<any> = new Observable<any>();
+  renderOrgMetricCard$: Observable<any> = new Observable<any>();
 
   constructor(
     @Inject(ApiService) private apiService: ApiService,
@@ -41,6 +44,9 @@ export class RootContainerComponent implements OnInit {
   ) {
     this.companies$ = this.apiService.fetchCompanies();
     this.renderCardDetail$ = this.apiService.renderDetailCard$.pipe(
+      tap(console.log),
+    );
+    this.renderOrgMetricCard$ = this.apiService.renderOrgMetricCard$.pipe(
       tap(console.log),
     );
   }

@@ -1,0 +1,32 @@
+<ng-container *ngIf="showProfile">
+  <div class="profile-card">
+    <div class="profile-details">
+      <div class="detail-item">
+        <span class="detail-label">Title</span>
+        <span class="detail-value">{{ data?.title }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Level From Top</span>
+        <span class="detail-value">
+          <span>{{ data?.levels_from_top }}</span>
+        </span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Direct Reporting</span>
+        <span class="detail-value">{{ data?.direct_reports }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Total Reports</span>
+        <span class="detail-value">
+          <span>{{ data?.total_reports }}</span>
+        </span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Departments</span>
+        <span class="detail-value">
+          <span>{{ data?.departments }}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</ng-container>

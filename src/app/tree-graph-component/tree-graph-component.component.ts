@@ -14,7 +14,7 @@ import ExportingModule from 'highcharts/modules/exporting';
 import AccessibilityModule from 'highcharts/modules/accessibility';
 import NoDataToDisplayModule from 'highcharts/modules/no-data-to-display';
 import OfflineExportingModule from 'highcharts/modules/offline-exporting';
-import { ApiService } from '../api.service';
+import { ApiService, OrgMetricPayload } from '../api.service';
 
 HighchartsMore(Highcharts);
 TreemapModule(Highcharts);
@@ -135,6 +135,24 @@ export class TreeGraphComponentComponent implements OnInit, OnChanges {
       if (idx > -1) {
         const cardData = nodes[idx];
         this.apiService.renderDetailCard$.next(cardData);
+        const orgMetricPayload: OrgMetricPayload = {
+          first_name: cardData?.firstName,
+          last_name: cardData?.lastName,
+          company: cardData?.company,
+        };
+        this.apiService
+          .fetchOrgMetrics(orgMetricPayload)
+          .subscribe((data: any): void => {
+            if (data?.departments) {
+              data.departments = data?.departments.reduce(
+                (acc: any, curr: any) => {
+                  return acc.concat(curr);
+                },
+                '',
+              );
+            }
+            this.apiService.renderOrgMetricCard$.next(data);
+          });
       }
     }
   }

@@ -8,9 +8,8 @@ describe('TreeGraphComponentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TreeGraphComponentComponent]
-    })
-    .compileComponents();
+      imports: [TreeGraphComponentComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TreeGraphComponentComponent);
     component = fixture.componentInstance;

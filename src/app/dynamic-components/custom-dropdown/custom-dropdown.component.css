@@ -29,11 +29,16 @@
   height: 40px !important;
 }
 
-.custom-dropdown-form-container .mdc-text-field--outlined .mat-mdc-form-field-infix {
+.custom-dropdown-form-container
+  .mdc-text-field--outlined
+  .mat-mdc-form-field-infix {
   padding-top: 10px !important;
   padding-bottom: 0 !important;
 }
 
-.custom-dropdown-form-container .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+.custom-dropdown-form-container
+  .mat-mdc-text-field-wrapper
+  .mat-mdc-form-field-flex
+  .mat-mdc-floating-label {
   top: 50% !important;
 }

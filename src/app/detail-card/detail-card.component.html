@@ -1,10 +1,17 @@
 <ng-container *ngIf="showProfile">
   <div [id]="data?.id" class="profile-card">
     <div class="profile-header">
-      <button (click)="closeProfile()" aria-label="Close" class="close-button" mat-icon-button>
+      <button
+        (click)="closeProfile()"
+        aria-label="Close"
+        class="close-button"
+        mat-icon-button
+      >
         <mat-icon>close</mat-icon>
       </button>
-      <h2 style="height: 40px;font-family: Helvetica, Arial, sans-serif;">{{ data?.name }}</h2>
+      <h2 style="height: 40px; font-family: Helvetica, Arial, sans-serif">
+        {{ data?.name }}
+      </h2>
       <p class="title">{{ data?.title }}</p>
     </div>
     <div class="profile-details">
@@ -15,8 +22,8 @@
       <div class="detail-item">
         <span class="detail-label">Mobile</span>
         <span class="detail-value">
-        <a [href]="'tel:' + data?.mobile">{{ data?.mobile }}</a>
-      </span>
+          <a [href]="'tel:' + data?.mobile">{{ data?.mobile }}</a>
+        </span>
       </div>
       <div class="detail-item">
         <span class="detail-label">Company</span>
@@ -25,8 +32,8 @@
       <div class="detail-item">
         <span class="detail-label">Email</span>
         <span class="detail-value">
-        <a [href]="'mailto:' + data?.email">{{ data?.email }}</a>
-      </span>
+          <a [href]="'mailto:' + data?.email">{{ data?.email }}</a>
+        </span>
       </div>
     </div>
   </div>
