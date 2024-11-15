@@ -67,13 +67,16 @@ export class TreeGraphComponentComponent implements OnInit, OnChanges {
       const parentNode: any = nodesMap.get(parentId);
       const childNode: any = nodesMap.get(childId);
       const levelColors = [
-        '#feb56a',
-        '#2caffe',
-        'rgb(165,0,0)',
-        'rgb(46, 224, 202)',
-        'rgb(208, 33, 24)',
-        'rgb(0, 12, 62)',
-        'rgb(44, 175, 254)',
+        '#007ACC',
+        '#2C3E50',
+        '#00A699',
+        '#44C8F5',
+        '#B3E5FC',
+        '#666666',
+        '#A5A5A5',
+        '#D83333',
+        '#003C8F',
+        '#76C9FC',
       ];
       if (parentNode && childNode) {
         const parentLevel = parentNode.level || 0;
@@ -89,7 +92,7 @@ export class TreeGraphComponentComponent implements OnInit, OnChanges {
           link: {
             type: 'curved',
             lineWidth: 1,
-            color: '#000',
+            color: '#BBBBBB',
           },
           marker: {
             radius: 10,
